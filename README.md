@@ -1,5 +1,5 @@
 # 패키지
-pip설치 시 - requirements_pip.txt
+pip설치 시 - requirements_pip.txt   
 conda 설치 시 - environment_conda.yaml
    
 # 실행 방법
