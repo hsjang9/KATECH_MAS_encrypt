@@ -1,5 +1,5 @@
 # 패키지
-파이썬 3.8 동작 확인
+파이썬 3.8 동작 확인   
 pip설치 시 - requirements.txt   
 설치 패키지 리스트 gymnasium numpy requests pyproj pandas pygame scipy matplotlib tqdm tensorboardx ipython pause pyglet cython torch  
    
