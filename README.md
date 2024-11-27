@@ -9,7 +9,7 @@ python KATECH_MAS_main.py
    
 # 설정    
     katech_mas = KATECH_MAS_SYN() # 경로 생성 객체 생성   
-    katech_mas.print = False      # 송신 response 출력 여부   
+    katech_mas.prints = False      # 송신 response 출력 여부   
     katech_mas.display = False    # display 표출 여부   
     katech_mas.destination = 'E'  # E or W    
     katech_mas.period = 1         # 송신 주기 [s]   
