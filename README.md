@@ -1,7 +1,7 @@
 # 패키지
 pip설치 시 - requirements_pip.txt   
 conda 설치 시 - environment_conda.yaml   
-설치 패키지 리스트 gymnasium numpy requests pyproj pandas pygame scipy matplotlib tqdm tensorboardx ipython pause pyglet cython pytorch pytorch-cuda   
+설치 패키지 리스트 gymnasium numpy requests pyproj pandas pygame scipy matplotlib tqdm tensorboardx ipython pause pyglet cython torch   
    
 # 실행 방법
 python KATECH_MAS_main.py      
