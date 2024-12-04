@@ -155,14 +155,17 @@ class EnvViewer(object):
             print()
 
         try:
-            for veh in self.env.vehs_data.values():
+            font = pygame.font.Font(pygame.font.get_default_font(), 13)
+            for id, veh in self.env.vehs_data.items():
+                if veh['type'] == 'AV':
+                    text_img_id = font.render(str(veh['type'])+str(id), True, (0, 255, 0))
+                    self.env.viewer.sim_surface.blit(text_img_id, (veh['pos_tr'][-1]+107) * 4)
+                else:
+                    text_img_id = font.render(str(veh['type'])+str(id), True, (0, 0, 255))
+                    self.env.viewer.sim_surface.blit(text_img_id, (veh['pos_tr'][-1]+107) * 4)
                 if veh['priority'] != -1:
-                    font = pygame.font.Font(pygame.font.get_default_font(), 15)
-                    text_img = font.render(str(veh['priority']), True, (0, 0, 0))
-                    self.env.viewer.sim_surface.blit(text_img, (veh['pos_tr'][-1]+112) * 4)
-                    # print(veh['av_pos_tr'], (veh['av_pos_tr']+112) * 4)
-                    # print(self.env.objs_data[0]['geofence_pos_tr'], (self.env.objs_data[0]['geofence_pos_tr']+112) * 4)
-            
+                    text_img_priority = font.render('P'+str(veh['priority']), True, (0, 0, 0))
+                    self.env.viewer.sim_surface.blit(text_img_priority, (veh['pos_tr'][-1]+113) * 4)            
                   #(513, 417)
         except Exception as e:
             print('Cannot display priority number')

@@ -25,7 +25,9 @@ class VehicleGraphics(object):
     EGO_COLOR = GREEN
 
     @classmethod
-    def display(cls, vehicle: Vehicle, surface: "WorldSurface",
+    def display(cls, 
+                vehicle: Vehicle, 
+                surface: "WorldSurface",
                 transparent: bool = False,
                 offscreen: bool = False,
                 label: bool = False,
@@ -185,7 +187,10 @@ class VehicleGraphics(object):
         elif isinstance(vehicle, MDPVehicle):
             color = cls.EGO_COLOR
         elif isinstance(vehicle, ControlledVehicle):
-            color = cls.GREEN
+            if vehicle.type == 'AV':
+                color = cls.GREEN
+            elif vehicle.type == 'HDV':
+                color = cls.BLUE
         if transparent:
             color = (color[0], color[1], color[2], 30)
         return color
