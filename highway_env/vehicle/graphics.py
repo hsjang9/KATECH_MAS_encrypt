@@ -73,9 +73,14 @@ class VehicleGraphics(object):
         pygame.draw.rect(vehicle_surface, cls.BLACK, rect_headlight_right, 0)
         
         if isinstance(v, ControlledVehicle):
-            for gp in v.global_path:
-                point = surface.pos2pix(gp[0],gp[1])
-                pygame.draw.circle(surface,(100, 200, 255), point, 2)
+            if v.type == 'AV':
+                for gp in v.global_path:
+                    point = surface.pos2pix(gp[0],gp[1])
+                    pygame.draw.circle(surface,(50, 200, 0), point, 2)
+            elif v.type == 'HDV' or v.type == 'HV':
+                for gp in v.global_path:
+                    point = surface.pos2pix(gp[0],gp[1])
+                    pygame.draw.circle(surface,(100, 200, 255), point, 2)
 
         if draw_roof:
             rect_roof = (surface.pix(v.LENGTH/2 - tire_length/2),
