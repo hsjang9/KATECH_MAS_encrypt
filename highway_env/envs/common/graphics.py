@@ -166,7 +166,15 @@ class EnvViewer(object):
                 if veh['priority'] != -1:
                     text_img_priority = font.render('P'+str(veh['priority']), True, (0, 0, 0))
                     self.env.viewer.sim_surface.blit(text_img_priority, (veh['pos_tr'][-1]+113) * 4)            
-                  #(513, 417)
+            for id, veh in self.env.hv_data.items():
+                text_img_id = font.render(str(veh['type'])+str(id), True, (0, 0, 255))
+                self.env.viewer.sim_surface.blit(text_img_id, (veh['pos_tr'][-1]+107) * 4)
+                if veh['priority'] != -1:
+                    text_img_priority = font.render('P'+str(veh['priority']), True, (0, 0, 0))
+                    self.env.viewer.sim_surface.blit(text_img_priority, (veh['pos_tr'][-1]+113) * 4)     
+
+                
+                #(513, 417)
         except Exception as e:
             print('Cannot display priority number')
             print(e)
